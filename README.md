@@ -11,7 +11,7 @@ Usage
 
 Reference the jquery.flot.multihighlight.js in your markup.
 
-Set there grid options:
+Set these grid options:
 
 	hoverable: true,
 	autoHighlight: false,
