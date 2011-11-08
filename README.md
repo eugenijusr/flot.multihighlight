@@ -2,7 +2,7 @@ Multihighlight plugin for flot
 ==============================
 
 Plugin enables mouseover highlighting data points for multiple plot series and even multiple plots (if they have a common axis such as date for example).
-You can see this plugin in action [.here](https://www.portfolionumbers.com/tools/risk/historical/returns).
+You can see this plugin in action [here](https://www.portfolionumbers.com/tools/risk/historical/returns).
 
 Usage
 -----
@@ -26,12 +26,12 @@ This will enable multihighlighting on all series in the plot on x axis.
 
 ### Multiple plots
 
-When you have multiple plots that share one axis you can enable multihighlighting for them in such a way that when one plot's data point is highlighted
-the point with the same shared axis value on the other plot will be highlighted as well. You can see the how it looks like [.here](https://www.portfolionumbers.com/tools/risk/historical/returns).
+When you have multiple plots that share one axis you can enable multihighlighting for them in a way that when one plot's data point is highlighted
+the point with the same shared axis value on the other plot will be highlighted as well. You can see the how it looks like [here](https://www.portfolionumbers.com/tools/risk/historical/returns).
 
 For this to work you need to pass an additional multihighlight option - linkedPlots - an array of plots that are linked to the current plot. An example of how this can be accomplished:
 
-	// plots is an plot array.
+	// plots is a plot array.
 	$.each(plots, function(index, plot){
 		// Link the plots for highlighting them at the same time.
 		plot.getOptions().multihighlight.linkedPlots = new Array();
@@ -43,13 +43,13 @@ For this to work you need to pass an additional multihighlight option - linkedPl
 	});
 
 This code can be executed after drawing the plots linking them all together. It is rather manual I know, but that's because flot plugin can deal with only one plot at a time so it has to be done externally.
-Unless someone comes up with a better solution.
+Until someone comes up with a better solution that is.
 
 ### Events
 
 This plugin fires a couple of events.
 
-* multihighlighted(event, position, items). Fires when the data points are highlighted. Position is the pointer position within plot and items is an array of { serieIndex, dataIndex } objects.
+* multihighlighted(event, position, items). Fires when the data points are highlighted. Position is the mouse pointer position within a plot and items is an array of { serieIndex, dataIndex } objects.
 * unmultihighlighted(event) - when the data points lose hover and are unhighlighted.
 
 When using linked plots events will fire for each plot separately.
