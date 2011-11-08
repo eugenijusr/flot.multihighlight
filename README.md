@@ -2,7 +2,7 @@ Multihighlight plugin for flot
 ==============================
 
 Plugin enables mouseover highlighting data points for multiple plot series and even multiple plots (if they have a common axis such as date for example).
-You can see this plugin in action [here](https://www.portfolionumbers.com/tools/risk/historical/returns).
+You can see a demo [here](http://www.eugene.lt/linked/multihighlight/index.html) and usage of the plugin in action [here](https://www.portfolionumbers.com/tools/risk/historical/returns).
 
 Usage
 -----
@@ -49,7 +49,7 @@ Until someone comes up with a better solution that is.
 
 This plugin basically works by firing a couple of events indicating when data points where highlighted and unhighlighted.
 
-* multihighlighted(event, position, items). Fires when the data points are highlighted. Position is the mouse pointer position within a plot and items is an array of data points - { serieIndex, dataIndex } objects.
+* multihighlighted(event, position, items). Fires when the data points are highlighted. Position is a plot coordinate where mouse pointer is and items is an array of data points - { serieIndex, dataIndex } objects.
 * unmultihighlighted(event) - when the data points lose hover and are unhighlighted.
 
 When using linked plots these events will fire for each plot separately.
