@@ -47,12 +47,12 @@ Until someone comes up with a better solution that is.
 
 ### Events
 
-This plugin fires a couple of events.
+This plugin basically works by firing a couple of events indicating when and which data points where highlighted and unhighlighted.
 
-* multihighlighted(event, position, items). Fires when the data points are highlighted. Position is the mouse pointer position within a plot and items is an array of { serieIndex, dataIndex } objects.
+* multihighlighted(event, position, items). Fires when the data points are highlighted. Position is the mouse pointer position within a plot and items is an array of data points - { serieIndex, dataIndex } objects.
 * unmultihighlighted(event) - when the data points lose hover and are unhighlighted.
 
-When using linked plots events will fire for each plot separately.
+When using linked plots these events will fire for each plot separately.
 
 Known issues
 ------------
