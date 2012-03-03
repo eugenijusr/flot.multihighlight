@@ -1,4 +1,4 @@
-$(function() {
+(function($) {
 	
 	var options = {
 		multihighlight: {
@@ -88,4 +88,4 @@ $(function() {
 		name: 'multihighlight',
 		version: '1.0'
 	});
-});
+})(jQuery);
