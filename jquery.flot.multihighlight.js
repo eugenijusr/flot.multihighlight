@@ -4,6 +4,7 @@
 		multihighlight: {
 			mode: null,	// null, x or y.
 			linkedPlots: null,	// null or array of plots.
+			hoverMode: null // null, point or bar.
 		}
 	};
 	
@@ -39,9 +40,11 @@
 
 						if (j != 0 && serie.data[j] !=null) {
 							var highlighted = j-1;
-							// Checking which one is closer.
-							if (axisPosition-serie.data[j-1][dataIndex] > Math.abs(axisPosition-serie.data[j][dataIndex])) {
-								highlighted = j;
+							// Checking which one is closer if it is not a bar graph.
+							if (plotToHighlight.getOptions().multihighlight.hoverMode !== 'bar') {
+								if (axisPosition-serie.data[j-1][dataIndex] > Math.abs(axisPosition-serie.data[j][dataIndex])) {
+									highlighted = j;
+								}
 							}
 
 							plotToHighlight.highlight(i, highlighted);
