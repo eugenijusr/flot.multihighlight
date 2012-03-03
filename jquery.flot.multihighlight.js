@@ -32,16 +32,17 @@
 					var highlightedItems = new Array();
 					$.each(plotToHighlight.getData(), function(i, serie) {
 						var j;
+
 						for (j = 0; j < serie.data.length; j++) {
 							if (serie.data[j] == null || serie.data[j][dataIndex] > axisPosition) {
 								break;
 							}
 						}
 
-						if (j != 0 && serie.data[j] !=null) {
+						if (j != 0) {
 							var highlighted = j-1;
 							// Checking which one is closer if it is not a bar graph.
-							if (plotToHighlight.getOptions().multihighlight.hoverMode !== 'bar') {
+							if (plotToHighlight.getOptions().multihighlight.hoverMode !== 'bar' && serie.data[j] != null) {
 								if (axisPosition-serie.data[j-1][dataIndex] > Math.abs(axisPosition-serie.data[j][dataIndex])) {
 									highlighted = j;
 								}
