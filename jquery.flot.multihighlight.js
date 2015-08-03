@@ -44,7 +44,7 @@ $(function() {
 								highlighted = j;
 							}
 
-							plotToHighlight.highlight(i, highlighted);
+							plotToHighlight.highlight(serie, serie.data[highlighted]);
 							highlightedItems.push({ serieIndex: i, dataIndex: highlighted });
 						}
 					});
